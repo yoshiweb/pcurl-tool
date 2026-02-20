@@ -1,6 +1,6 @@
-# pcurl - Webページ保存ツール
+# gurl - Webページ保存ツール
 
-**pcurl** は、Webサイトを、HTMLで保存するためのコマンドラインツールです。
+**gurl** は、Webサイトを、HTMLで保存するためのコマンドラインツールです。
 
 通常の `curl` や「名前を付けて保存」では中身が空っぽになってしまうSPA（Single Page Application）のサイトでも、正しく保存することができます。
 
@@ -27,14 +27,14 @@
 必要なプログラムと、専用ブラウザをダウンロードします。
 
 ```bash
-npm install
+npm ci
 ```
 
 > ※ 初回はブラウザのダウンロードが行われるため、数分かかる場合があります。
 
 ### 2. コマンドの登録
 
-`pcurl` というコマンドでどこからでも呼び出せるように設定します。
+`gurl` というコマンドでどこからでも呼び出せるように設定します。
 
 ```bash
 npm link
@@ -48,10 +48,10 @@ npm link
 
 ### 基本的な使い方
 
-ターミナルを開き、`pcurl` の後に保存したいURLを入力してEnterキーを押します。
+ターミナルを開き、`gurl` の後に保存したいURLを入力してEnterキーを押します。
 
 ```bash
-pcurl "https://example.com/page?id=1&name=test"
+gurl "https://example.com/page?id=1&name=test"
 ```
 
 **実行結果:**
@@ -74,22 +74,22 @@ URLリストからまとめてダウンロードしたい場合は、以下の�
 
 ```bash
 # urls.txt というファイルにURLが1行ずつ書かれていると仮定
-while read url; do pcurl "$url"; done < urls.txt
+while read url; do gurl "$url"; done < urls.txt
 ```
 
 **Windows (PowerShell) の場合:**
 
 ```powershell
 # urls.txt というファイルにURLが1行ずつ書かれていると仮定
-Get-Content urls.txt | ForEach-Object { pcurl $_ }
+Get-Content urls.txt | ForEach-Object { gurl $_ }
 ```
 
 ---
 
 ## ❓ よくある質問 (FAQ)
 
-**Q. 「command not found」や「pcurl は内部コマンド...として認識されていません」と出る**
-A. `npm link` が正しく完了していない可能性があります。再度実行するか、PCを再起動してみてください。それでも直らない場合は、`node pcurl.js <URL>` のように直接ファイルを実行してください。
+**Q. 「command not found」や「gurl は内部コマンド...として認識されていません」と出る**
+A. `npm link` が正しく完了していない可能性があります。再度実行するか、PCを再起動してみてください。それでも直らない場合は、`node gurl.js <URL>` のように直接ファイルを実行してください。
 
 **Q. ページが真っ白なまま保存される**
 A. サイトの読み込みが非常に遅い場合があります。スクリプト内の `timeout` 設定を延ばすか、ネットワーク環境を確認してください。
@@ -103,5 +103,5 @@ A. いいえ、このツールは「ログインしていない新しいブラ�
 
 ツールが不要になった場合は、以下の手順で削除してください。
 
-1. コマンドの登録解除: `npm unlink -g pcurl`
+1. コマンドの登録解除: `npm unlink -g gurl`
 2. フォルダの削除: このツールのフォルダごと削除してください。

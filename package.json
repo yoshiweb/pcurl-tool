@@ -1,13 +1,13 @@
 {
-  "name": "pcurl",
+  "name": "gurl",
   "version": "1.0.0",
   "description": "サイトのHTMLを保存するツール",
-  "main": "pcurl.js",
+  "main": "gurl.js",
   "bin": {
-    "pcurl": "./pcurl.js"
+    "gurl": "./gurl.js"
   },
   "scripts": {
-    "start": "node pcurl.js",
+    "start": "node gurl.js",
     "postinstall": "npx playwright install chromium"
   },
   "dependencies": {
